@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Arquitetura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Geovana Neuberger</h1>
+        <nav>
+            <ul>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="header-image">
+        <img src="pikachu.jpg" alt="Imagem Principal">
+    </div>
+
+    <section id="projetos">
+        <h2>Projetos</h2>
+        <div class="projeto-container">
+            <div class="projeto" style="background-image: url('path_to_image1.jpg');"></div>
+            <div class="projeto" style="background-image: url('path_to_image2.jpg');"></div>
+            <div class="projeto" style="background-image: url('path_to_image3.jpg');"></div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p>SOBRE</p>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <form  action="https://formspree.io/f/mdkngopk" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+    
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="contatos">
+            <p>Telefone</p>
+            <p>Email</p>
+            <p>Endereço</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        function revealSections() {
+            const sections = document.querySelectorAll('section');
+            const windowHeight = window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top + scrollTop;
+                if (scrollTop + windowHeight > sectionTop) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealSections);
+        document.addEventListener('DOMContentLoaded', revealSections);
+    </script>
+    
+</body>
+</html>
