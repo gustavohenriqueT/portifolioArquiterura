@@ -1,0 +1,288 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: transparent;
+    color: #e67e22;
+    padding: 10px 20px;
+    position: fixed;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+header.scrolled {
+    background-color: transparent; 
+    padding: 5px 20px; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: font-size 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+    transition: transform 0.3s; 
+}
+
+nav ul li:hover {
+    transform: scale(1.1); 
+}
+
+nav ul li a {
+    color: #e67e22;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s; 
+}
+
+nav ul li a:hover {
+    color: #ffffff; 
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+section {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s; 
+}
+
+section.visible {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+#projetos {
+    background-color: #e5e5e5;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#projetos h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+#projetos .projeto-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#projetos .projeto {
+    flex: 1;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+#projetos .projeto:hover {
+    transform: scale(1.05);
+}
+
+#sobre {
+    background-color: #fff;
+}
+
+#sobre h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    line-height: 1.6;
+    color: #666;
+}
+
+#contato {
+    background-color: #fff;
+}
+
+#contato h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contato form label {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+#contato form input, 
+#contato form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#contato form input:focus, 
+#contato form textarea:focus {
+    border-color: #e67e22;
+}
+
+#contato form button {
+    padding: 10px;
+    border: none;
+    background-color: #e67e22;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#contato form button:hover {
+    background-color: #d35400;
+}
+
+.contatos {
+    margin-top: 20px;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #e67e22;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .projeto-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projeto {
+        height: 150px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    #contato form {
+        gap: 5px;
+    }
+
+    #contato form input, 
+    #contato form textarea {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    footer .social-icons a {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    .projeto-container {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .projeto {
+        height: 180px;
+    }
+
+    section {
+        margin: 15px;
+        padding: 30px;
+    }
+}
